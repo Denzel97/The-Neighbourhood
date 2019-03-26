@@ -44,12 +44,12 @@
 
 You need the following to work on the project:
 
--postgesql
--Python version 3.6
--Django 2.0+
--Pip
--virtualenv
--A text Editor
+- postgesql
+- Python version 3.6
+- Django 2.0+
+- Pip
+- virtualenv
+- A text Editor
 
 ## Link to live Website
 
