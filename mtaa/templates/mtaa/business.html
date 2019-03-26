@@ -1,0 +1,24 @@
+{% extends "mtaa/base.html" %}
+{% block content %}
+{% for d in denz %}
+<div class="row">
+    <div class="col-md-10">
+        <div class="business">
+                <h1>{{ d.business_name }}</h1>
+            <p>{{ d.user }}</p>
+            <small><strong>{{ d.business_email }}</strong></small>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+
+<style>
+    .business {
+        border: 0.5px solid black;
+        padding: 5%;
+        margin: 2%;
+        border-radius: 10px;
+    }
+</style>
+{% endblock content %}

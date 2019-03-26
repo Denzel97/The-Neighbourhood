@@ -33,7 +33,7 @@
                 <div class="collapse navbar-collapse" id="navbarToggle">
                     <div class="navbar-nav mr-auto">
                         <a class="nav-item nav-link" href="{% url 'mtaa-home' %}">Home</a>
-                        <a class="nav-item nav-link" href="{% url 'mtaa-about' %}">About</a>
+                        <a class="nav-item nav-link" href="{% url 'mtaa-business' %}">Business</a>
                     </div>
                     <!-- Navbar Right Side -->
                     <div class="navbar-nav">
@@ -51,7 +51,7 @@
     </header>
     <main role="main" class="container">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-10">
                 {% if messages %}
                 {% for message in messages %}
                 <div class="alert alert-{{ message.tags }}">
