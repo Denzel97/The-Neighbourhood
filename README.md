@@ -4,7 +4,17 @@
 
 ## Description
 
- Awards is a webiste where software programmers can post there projects for review and to be voted.
+ This is an application that allows you to be in the loop about everything happening in your neighborhood. From contact information of different handyman to meeting announcements or even alerts.
+
+## User Stories
+1. Sign in with the application to start using.
+2. Set up a profile about me and a general location and my neighborhood name.
+3. Find a list of different businesses in my neighborhood.
+4.Find Contact Information for the health department and Police authorities near my neighborhood.
+5. Create Posts that will be visible to everyone in my neighborhood.
+6. Change My neighborhood when I decide to move out.
+7. Only view details of a single neighborhood.
+
 
 ## Behavior Driven Development
 
@@ -34,6 +44,7 @@
 
 You need the following to work on the project:
 
+-postgesql
 -Python version 3.6
 -Django 2.0+
 -Pip
@@ -49,9 +60,25 @@ You need the following to work on the project:
 * Django
 * Html/css
 * Bootstrap
+* django-bootstrap4
+* Heroku
+* Python3.6
+
+## Clone repository
+* git clone https://github.com/Denzel97/The-Neighbourhood.git
+* cd The-Neighbourhood
+* virtualenv virtual
+* source/virtual/bin/activate
+* pip install django
+* pip install -r requirements.txt(Install the dependencies)
+* python3.6 manage.py migrate
+* python manage.py runserver
+
+## Known Bugs
+ None at the moment
 
 ## License
 
- MIT License
+ This project is licensed under the MIT License
 
  Copyright (c) 2018 Denzel Ouma
