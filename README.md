@@ -12,15 +12,16 @@
 | :------------- | :-------------: |   -------------: |
 |   User athentication  |  Sign-up credentials   | Navigate to login page    |
 |  User athentication    | Login credentials    |  Navigate to home page   |
-|  Post project    | Project details    |  Project posted on home page   |
-|  Project review    | user review    |  user review   |
+|  Logout    | Logout    |  logged out   |
+|  Post Neighbourhood    | Neighbourhood    |  Neighbourhood   |
+|  Post Business    | Business Posted    |  Business   |
 
 ## Setup/Installation Requirements
 
  To start using this project use the following commands:
 
-* git clone https://github.com/Denzel97/Awards.git
-* cd Awards
+* git clone https://github.com/Denzel97/The-Neighbourhood.git
+* cd The-Neighbourhood
 * atom . OR code .
 
  To run this program
@@ -34,14 +35,14 @@
 You need the following to work on the project:
 
 -Python version 3.6
--Django 2.0
+-Django 2.0+
 -Pip
 -virtualenv
 -A text Editor
 
 ## Link to live Website
 
- [Awards](https://denzawards.herokuapp.com/)
+ [Awards](https://denzhood.herokuapp.com/)
 
 ## Technologies Used
 
