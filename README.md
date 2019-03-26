@@ -42,7 +42,7 @@ You need the following to work on the project:
 
 ## Link to live Website
 
- [Awards](https://denzhood.herokuapp.com/)
+ [Neighbourhood](https://denzhood.herokuapp.com/)
 
 ## Technologies Used
 
