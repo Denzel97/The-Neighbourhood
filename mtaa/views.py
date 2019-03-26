@@ -1,13 +1,26 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView
 from .models import *
+from .forms import *
+from django.contrib.auth.decorators import login_required
+
 
 
 def home(request):
-    context = {
-        'posts': Post.objects.all()
-    }
-    return render(request, 'mtaa/home.html', context)
+    
+    posts= Post.objects.all()
+   
+    if request.method == 'POST':
+        form = UploadForm(request.POST,request.FILES)
+
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form =UploadForm()
+        print (form)
+
+    return render(request, 'mtaa/home.html', locals())
 
 
 class PostListView(ListView):

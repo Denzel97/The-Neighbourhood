@@ -1,5 +1,15 @@
 {% extends "mtaa/base.html" %}
 {% block content %}
+{{ block.super}}
+{% load static %}
+{% load crispy_forms_tags %}
+<form method='POST' enctype="multipart/form-data">
+    {% csrf_token %}
+    {%crispy form%}
+ 
+ 
+    <button type="submit" name="button">upload</button>
+  </form>
 {% for post in posts %}
 <article class="media content-section">
     <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}" alt="">
@@ -11,6 +21,7 @@
         <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
         <p class="article-content">{{ post.content }}</p>
     </div>
+    
 </article>
 {% endfor %}
 {% endblock content %}
