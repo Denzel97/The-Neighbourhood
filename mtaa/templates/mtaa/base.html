@@ -25,7 +25,7 @@
     <header class="site-header">
         <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
             <div class="container">
-                <a class="navbar-brand mr-4" href="/">Neighbourhood Mtaa</a>
+                <a class="navbar-brand mr-4" href="/">Neighbourhood-Mtaa</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
                     aria-haspopup="true" aria-expanded="false">
                     <span class="navbar-toggler-icon"></span>
@@ -38,6 +38,7 @@
                     <!-- Navbar Right Side -->
                     <div class="navbar-nav">
                         {% if user.is_authenticated %}
+                        <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
                         <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
                         {% else %}
                         <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
@@ -59,19 +60,6 @@
                 {% endfor %}
                 {% endif %}
                 {% block content %}{% endblock %}
-            </div>
-            <div class="col-md-4">
-                <div class="content-section">
-                    <h3>Our Sidebar</h3>
-                    <p class="text-muted">You can put anu information here you'd like
-                        <ul class="list-group">
-                            <li class="list-group-item list-group-item-light">Latest Post</li>
-                            <li class="list-group-item list-group-item-light">Announcements</li>
-                            <li class="list-group-item list-group-item-light">Calendars</li>
-                            <li class="list-group-item list-group-item-light">etc</li>
-                        </ul>
-                    </p>
-                </div>
             </div>
         </div>
     </main>
