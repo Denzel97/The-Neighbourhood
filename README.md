@@ -1,84 +1,48 @@
-# Neighbourhood
+# EstateFlow
 
-### By Denzel Ouma
+A polished prototype for estate/community operations — resident CRM, house registry, service-charge collections, M-Pesa reconciliation, vendor expenses, committee workflows and communications.
 
-## Description
+## Prototype scope
+- One-page public landing/login experience
+- Role-aware navigation for Chairperson, Treasurer, Secretary, Estate Manager, Security Lead and Resident
+- Estate/house CRM with resident contacts and charge status
+- Service-charge billing and arrears views
+- M-Pesa-ready reconciliation queue for inflows and outflows
+- Vendor/service management for security, garbage, landscaping and water
+- Expense approval workflow: request → review → approve → pay → reconcile
+- Notices, meetings/minutes, reports and settings shells
+- Responsive mobile/tablet/desktop UI
 
- This is an application that allows you to be in the loop about everything happening in your neighborhood. From contact information of different handyman to meeting announcements or even alerts.
+## Production architecture to add
+1. **Authentication & RBAC:** Supabase/Auth.js/Clerk with server-side route protection and permissions matrix.
+2. **Database:** Postgres entities for estates, blocks, houses, residents, occupancy, charges, invoices, payments, M-Pesa transactions, vendors, expenses, approvals, services, notices, meetings and audit logs.
+3. **M-Pesa:** Safaricom Daraja STK Push + C2B/B2C where appropriate, callback validation, immutable transaction IDs, idempotency and automated matching rules. Never trust client-side payment status.
+4. **Reconciliation:** Match by account/Paybill, phone, amount, reference, timestamp and house/member mapping; send exceptions to a review queue.
+5. **Money controls:** maker/checker approval, configurable spending limits, dual approval for high-value payments, attachment/evidence requirements and complete audit trail.
+6. **Notifications:** SMS/email/WhatsApp provider integration for receipts, arrears reminders, approvals, notices and security alerts.
+7. **Reporting:** monthly income/expense, arrears ageing, vendor spend, service performance, cash/bank/M-Pesa reconciliation and downloadable statements.
 
-## User Stories
-1. Sign in with the application to start using.
-2. Set up a profile about me and a general location and my neighborhood name.
-3. Find a list of different businesses in my neighborhood.
-4.Find Contact Information for the health department and Police authorities near my neighborhood.
-5. Create Posts that will be visible to everyone in my neighborhood.
-6. Change My neighborhood when I decide to move out.
-7. Only view details of a single neighborhood.
+## Important product gaps to cover before production
+- Owner vs tenant vs caretaker relationships and multiple occupants per house
+- House/parking/store/unit allocation and occupancy history
+- Move-in/move-out records and deposit tracking
+- Meter readings/utilities where the estate needs them
+- Incident/security log and visitor/access management
+- Maintenance requests with SLA, photos, assignment and status history
+- Vendor contracts, renewal dates, invoices and compliance documents
+- Procurement/quotation comparison before large purchases
+- Budget vs actual by service/category
+- Committee elections, term dates and delegated authority
+- Conflict-of-interest declarations
+- Document vault and meeting minutes
+- Resident complaints/disputes and escalation workflow
+- Emergency contacts and broadcast alerts
+- Data privacy, retention, backups, export and deletion policies
+- Full immutable audit log for financial/admin actions
 
+## Brand direction
+**Name:** EstateFlow — Community OS
 
-## Behavior Driven Development
+**Palette:** Deep Forest `#12392B`, Estate Green `#1F6B4D`, Mint `#DCEEE3`, Warm Gold `#CAA55B`, Paper `#F7F8F5`, Ink `#18231E`.
 
-| Behavior  | Input |   Output |
-| :------------- | :-------------: |   -------------: |
-|   User athentication  |  Sign-up credentials   | Navigate to login page    |
-|  User athentication    | Login credentials    |  Navigate to home page   |
-|  Logout    | Logout    |  logged out   |
-|  Post Neighbourhood    | Neighbourhood    |  Neighbourhood   |
-|  Post Business    | Business Posted    |  Business   |
-
-## Setup/Installation Requirements
-
- To start using this project use the following commands:
-
-* git clone https://github.com/Denzel97/The-Neighbourhood.git
-* cd The-Neighbourhood
-* atom . OR code .
-
- To run this program
-
-* run this command lines in your terminal:
-* python manage.py runserver
-* access the application on this localhost address http://127.0.0.1:8000
-
-## Prerequisites
-
-You need the following to work on the project:
-
-- postgesql
-- Python version 3.6
-- Django 2.0+
-- Pip
-- virtualenv
-- A text Editor
-
-## Link to live Website
-
- [Neighbourhood](https://denzhood.herokuapp.com/)
-
-## Technologies Used
-
-* Django
-* Html/css
-* Bootstrap
-* django-bootstrap4
-* Heroku
-* Python3.6
-
-## Clone repository
-* git clone https://github.com/Denzel97/The-Neighbourhood.git
-* cd The-Neighbourhood
-* virtualenv virtual
-* source/virtual/bin/activate
-* pip install django
-* pip install -r requirements.txt(Install the dependencies)
-* python3.6 manage.py migrate
-* python manage.py runserver
-
-## Known Bugs
- None at the moment
-
-## License
-
- This project is licensed under the MIT License
-
- Copyright (c) 2018 Denzel Ouma
+The design intentionally feels like premium fintech + modern property management rather than a traditional estate committee spreadsheet.
